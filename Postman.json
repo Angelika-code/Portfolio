@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "e69bf8f0-1452-4ee4-81c8-d0b0f79ee320",
+		"name": "CodersLab KAT24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30166214"
+	},
+	"item": [
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/bills",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/bills",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"bills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/curriences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"enabled\": true,\r\n  \"default\": false,\r\n  \"code\": \"AN1\",\r\n  \"name\": \"ANEuro\",\r\n  \"symbol\": \"ANE\",\r\n  \"decimal_places\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"enabled\": true,\r\n  \"default\": true,\r\n  \"code\": \"AN1\",\r\n  \"name\": \"ANEuro1\",\r\n  \"symbol\": \"ANE1\",\r\n  \"decimal_places\":8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies",
+						"AN1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies",
+						"AN1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/accounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies",
+						"AN1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies",
+						"AN1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/currencies/AN1",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"currencies",
+						"AN1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/accounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/categories",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"edukacja\",\r\n  \"notes\": \"ucze sie postmana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/categories",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://fintech-testlab.coderslab.pl/api/v1/categories/850",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"notes\": \"wydatki na edukacje\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fintech-testlab.coderslab.pl/api/v1/categories/850",
+					"protocol": "https",
+					"host": [
+						"fintech-testlab",
+						"coderslab",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"850"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0MCIsImp0aSI6IjQzMDA0MWJlMzYwZjM2NmE0NzZlNGQxZDA2ZjE3NjFkZWIyY2ZkMDIyMjNmZTc2MWEzNTEyYjQ3YTdlYWNjNmEwOGU5MWUyNjg3NzFmZDk3IiwiaWF0IjoxNzAwMzkzMTA1LjMwMzA0OCwibmJmIjoxNzAwMzkzMTA1LjMwMzA1MiwiZXhwIjoxNzMyMDE1NTA1LjI5MDczNSwic3ViIjoiMTMwOCIsInNjb3BlcyI6W119.bj2NA0UNC-34U7UdHbslvHjqRsBbnbJtApNPYqsCxChEh2xgxxraD55dywEaNrwNkyNzgyz8xikPfuzOv5cWCooQG4OuIgaXkShkOiFze4SBuSAriCTDx3ZBmm7tW6WkKfg5OhntXXriJwmAVjH3YjMUdalTUDEP2ns68MpXJNCM8LxDfeVlAhtDRYzvM1YsY0gKG_T-8ccauzYdT8gRRFCM6Gq_y5RYUJxP6NOTaLE6TFkBkUGjmgP3UHLAdRmZX-ula41x49o4klYOvR8E6-UhDDcI_HCs7m4kedncizBLxND2NXmARvm2FEQSuU3qLMGBn1P4XwdGUKX1QfStgUceW01EEZJrfIWq2mHOP6Y5lrPtPAJhSGuKiR1NJxnnjKr7kDAyaJKfP4Z4TDMKxvCFyimNUUDizHJ2XPXhBi9_FeGloRGG4UvuD4SdQ5SdoWme9G6ItynX_JjFQEfjOJAoiDoWRR6DcjYSh97LxIV0X8tudNVNOOtIzcoWuTDo00Q4SFDcukiLLJg2y3aJOPOFuUMuFzbHlYhBv7L67KfXegqlDhvK4XVbG0ZBbQ5ttI_J3UDPg0XdTmIy1sFw5yJ1VR_-VPxYnUPwGre0PjldzSi_CJmUM04hjw33O6Yddsf4sXaNu33S-aQliJ4yUpWyxg3kGAOJl3eXxzWV0KE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
